@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 echo "Installing Fastfetch..."
 echo
@@ -10,6 +9,9 @@ if [ "$(id -u)" -eq 0 ]; then
     echo "The script will prompt for your password when needed"
     exit 1
 fi
+
+# Enable exit on error after root check
+set -e
 
 # Detect distribution
 detect_distro() {
